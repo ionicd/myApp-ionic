@@ -9,7 +9,7 @@ export class ActivityService {
 
   // returns specific activity
   getActivity(activityID: string){
-    return this._httpClient.get(API + "/id" +
+    return this._httpClient.get(API + "/id/" +
        activityID);
   }
   
