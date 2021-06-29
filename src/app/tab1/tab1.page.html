@@ -7,16 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-img 
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
-     alt="">
+  <ion-card button *ngFor="let activity of (activityList | async)">
+    <ion-img [src]="activity.cropped" alt="">
      </ion-img>
      <ion-card-header> 
-       Angular Profile
+       {{activity.name}}
      </ion-card-header>
-      <ion-button color="primary" href="">  </ion-button>
-    
   </ion-card>
 </ion-content>
 
