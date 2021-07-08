@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ActivityService } from '../activity.service';
+import { Activity } from '../types';
 
 @Component({
   selector: 'app-activity-detail',
@@ -7,7 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivityDetailPage implements OnInit {
 
-  constructor() { }
+  activityDetail: Observable<Activity>;
+  
+  constructor(
+    activityService: ActivityService,
+    activatedRoute: ActivatedRoute
+    ) {
+      const activityID = activatedRoute.snapshot.params["activityID"];
+      this.activityDetail = activityService.getActivity(activityID);
+    }
 
   ngOnInit() {
   }
