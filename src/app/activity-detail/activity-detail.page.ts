@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { ActivityVideoPage } from '../activity-video/activity-video.page';
 import { ActivityService } from '../activity.service';
 import { Activity } from '../types';
 
@@ -14,6 +16,7 @@ export class ActivityDetailPage implements OnInit {
   activityDetail: Observable<Activity>;
   
   constructor(
+    private _modalController: ModalController,
     activityService: ActivityService,
     activatedRoute: ActivatedRoute
     ) {
@@ -22,6 +25,13 @@ export class ActivityDetailPage implements OnInit {
     }
 
   ngOnInit() {
+  }
+
+  async openModal() {
+    const videoModal = await this._modalController.create({
+      component: ActivityVideoPage
+    })
+    return await videoModal.present();
   }
 
 }

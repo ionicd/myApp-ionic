@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'activity-detail',
     loadChildren: () => import('./activity-detail/activity-detail.module').then( m => m.ActivityDetailPageModule)
   }
+  // ,{
+  //   path: 'activity-video',
+  //   loadChildren: () => import('./activity-video/activity-video.module').then( m => m.ActivityVideoPageModule)
+  // }
 ];
 @NgModule({
   imports: [
