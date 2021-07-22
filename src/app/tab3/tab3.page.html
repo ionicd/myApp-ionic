@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-avatar class="profile-pic">
+    <ion-img src="https://raw.githubusercontent.com/saurav-kc/Hello-World/master/ParseChat/Assets.xcassets/photo-placeholder.imageset/photo-placeholder.jpg"></ion-img>
+  </ion-avatar>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Saurav KC</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+     Ionic Mobile Developer
+    </ion-card-content>
+  </ion-card>
 </ion-content>
